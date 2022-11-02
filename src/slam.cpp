@@ -66,7 +66,8 @@ int main( int argc, char** argv )
     // Initialize
     cout << "Initializing ... " << endl;
     int currIndex = startIndex; // Current frame index is start index
-    IndexReader idx("../data/rgbd_dataset_freiburg2_pioneer_360/associated.txt");
+    string data_dir = pd.getData("data_dir").c_str();
+    IndexReader idx(data_dir + "associated.txt");
     FRAME currFrame = readFrame(currIndex, pd, idx);
 
     string detector = pd.getData("detector");
